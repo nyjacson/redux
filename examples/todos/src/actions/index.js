@@ -1,8 +1,10 @@
+// Actionを作成するためのAction Creatorが定義されている
+
 let nextTodoId = 0
-export const addTodo = (text) => ({
+export const addTodo = (text) => ({ // textにはformのinput.valueが入る
   type: 'ADD_TODO',
   id: nextTodoId++,
-  text
+  text // ES2015のShorthand property namesを使用している. text:textと同義
 })
 
 export const setVisibilityFilter = (filter) => ({

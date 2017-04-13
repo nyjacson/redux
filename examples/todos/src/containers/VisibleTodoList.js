@@ -20,10 +20,17 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-  onTodoClick: toggleTodo
+  onTodoClick: toggleTodo // Actionをdispatchするコールバック関数を定義。以下と同義
+    //   const mapDispatchToProps = (dispatch) => {  
+    //   return {
+    //     onTodoClick: (id) => {
+    //       dispatch(toggleTodo(id))
+    //     }
+    //   }
+    // }  ===> combinedReducersにDispatchされる。todos.jaのTOGGLE_TODOへ
 }
 
-const VisibleTodoList = connect(
+const VisibleTodoList = connect(  // TodoListを、connectで拡張してVisibleTodoListコンポーネントとして返す
   mapStateToProps,
   mapDispatchToProps
 )(TodoList)
